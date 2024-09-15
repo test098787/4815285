@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>確認申請</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 引入CSS -->
+</head>
+<body>
+    <header class="header">
+        <img src="images/logo.png" alt="鈔好貸 Logo" class="logo">
+    </header>
+
+    <main class="second-page-container"> <!-- 修改為 second-page-container -->
+        <h2 class="title">資金金額</h2>
+        <div class="loan-summary">
+            <p>台幣 <span id="loanAmount">37000</span>.0</p>
+            <p>最低每月還款要求: 台幣 <span id="monthlyRepayment">1541.7</span></p>
+            <p>分期付款期限（月）: <span id="loanTerm">24</span> 月</p>
+            <p>最高年利率: <span id="interestRate">9</span>%</p>
+        </div>
+        <button class="confirm-btn" onclick="goToThirdPage()">確認</button>
+    </main>
+
+    <footer class="footer">
+        <nav>
+            <a href="index.html" class="nav-item">主頁</a>  <!-- 主頁按鈕 -->
+            <a href="#" class="nav-item">優惠</a>
+        </nav>
+    </footer>
+
+    <script>
+        // 跳轉到第三頁的函數
+        function goToThirdPage() {
+            window.location.href = 'third-page.html';  // 跳轉到第三頁
+        }
+
+        // 讀取 sessionStorage 中的數據
+        document.getElementById("loanAmount").innerText = sessionStorage.getItem('loanAmount');
+        document.getElementById("loanTerm").innerText = sessionStorage.getItem('loanTerm');
+        document.getElementById("monthlyRepayment").innerText = sessionStorage.getItem('monthlyRepayment');
+        document.getElementById("interestRate").innerText = sessionStorage.getItem('interestRate');
+    </script>
+</body>
+</html>
